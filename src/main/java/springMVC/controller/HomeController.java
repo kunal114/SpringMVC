@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,16 +27,41 @@ public class HomeController {
         return "about";
     }
 
-    @RequestMapping(value = "/modal", method = RequestMethod.GET)
+    @RequestMapping(value = "/modal")
     public String modal(Model model){
         model.addAttribute("name","Kunal Kashyap");
-        model.addAttribute("id", 1243);
+        model.addAttribute("id",1);
 
-        List<Integer> phone = new ArrayList<>() ;
-        phone.add(184794832);
-        phone.add(983726584);
+        List<String> city = new ArrayList<String>();
+        city.add("Blr");
+        city.add("Jal");
 
-        model.addAttribute("p",phone);
+        model.addAttribute("city",city);
         return "modal";
     }
+
+    @RequestMapping(value = "modalView")
+    public ModelAndView modalView(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("name","Kunal Kashyap");
+        modelAndView.setViewName("modalView");
+        return modelAndView;
+    }
+
+
+    @RequestMapping(value = "ExpLng")
+    public ModelAndView ExpLng(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("name","Kashyap");
+        List<String> city = new ArrayList<String>();
+        city.add("Blr");
+        city.add("Jal");
+        modelAndView.addObject("city",city);
+        modelAndView.setViewName("modalView");
+
+        return modelAndView;
+    }
+
+
+
 }
