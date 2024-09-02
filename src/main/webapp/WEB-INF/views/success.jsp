@@ -8,9 +8,11 @@
 <body>
     <h1> Registered Successfully</h1>
     <%
-        String email = (String) request.getAttribute("email");
+        String email = (String) request.getAttribute("Header");
     %>
+    <% String name = (String) request.getAttribute("name"); %>
 
     <h2> email= <%=email%> </h2>
+    <h2> name= <%=name%> </h2>
 </body>
 </html>
