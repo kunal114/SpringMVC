@@ -6,21 +6,12 @@
 <title>First JSP</title>
 </head>
 <body>
-    <h2>This is the Model Page</h2>
+    <h2>This is the Model & View Page</h2>
     <%
       String name = (String) request.getAttribute("name");
     %>
-    <%
-      Integer id = (Integer) request.getAttribute("id");
-    %>
-    <%
-      List<String> city = (List<String>) request.getAttribute("city");
-    %>
-    <h1>Name is <%=name%> </h1>
-    <h1>ID is <%=id%> </h1>
 
-    <% for(String c: city){ %>
-        <h2> <%=c%> </h2>
-    <% } %>
+    <h1> Name is <%= name %> </h1>
+
 </body>
 </html>
