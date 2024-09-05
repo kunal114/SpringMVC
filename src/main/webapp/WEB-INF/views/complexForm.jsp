@@ -85,6 +85,19 @@
 								</select>
 							</div>
 
+                            <div class="card">
+                                <div class="card-body">
+                                    <p>Your Address</p>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Enter Street" name="address.street"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Enter City" name="address.city"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
 							<div class="container text-center">
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
